@@ -3,3 +3,6 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 
 ## Top-down listening
 - reviewing and annotating audio clips based on classifier scores and metadata
+
+## Data selection
+- calculate sunrise and sunset times at a set of coordinate locations across a range of dates with `sunset_sunrise_calculator.ipynb`
