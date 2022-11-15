@@ -7,3 +7,6 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 ## Data selection
 - calculate sunrise and sunset times at a set of coordinate locations across a range of dates with `sunset_sunrise_calculator.ipynb`
 - filter a set of AudioMoth files to include only specific date ranges and (start) time ranges with `filter_files_by_dates_and_times.ipynb`
+
+## GIS
+- Convert between UTM and Lat/Lon coordinates, and create KML files from tables/csvs of waypoints, in `coordinates_and_kml.ipynb`
