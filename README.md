@@ -1,5 +1,5 @@
 # Bioacoustics Cookbook
-This repository contains various "recipes" for bioacoustics workflows and problems. These recipes include tutorials, discussions, and demonstrations, often relying on our open-source bioacoustics package [opensoundscape](https://github.com/kitzeslab/opensoundscape). They are written as Juptyer Notebooks to facilitate the integration of text, visuals, and code. 
+This repository contains various "recipes" for bioacoustics workflows and problems (sometimes more broadly applicable to quantitative ecology). These recipes include tutorials, discussions, and demonstrations, often relying on our open-source bioacoustics package [opensoundscape](https://github.com/kitzeslab/opensoundscape). They are written as Juptyer Notebooks to facilitate the integration of text, visuals, and code. 
 
 ## Top-down listening
 - Review and annotate audio clips based on classifier scores and metadata - `top-down-listening.ipynb`
