@@ -1,0 +1,33 @@
+{
+    "os": "macOS-12.6-arm64-arm-64bit",
+    "python": "3.9.13",
+    "heartbeatAt": "2023-01-11T13:46:59.302295",
+    "startedAt": "2023-01-11T13:46:58.470700",
+    "docker": null,
+    "cuda": null,
+    "args": null,
+    "state": "running",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": "https://github.com/kitzeslab/bioacoustics-cookbook.git",
+        "commit": "4caec2b8fdbace51c00eb9e936fc1ed31abe571c"
+    },
+    "email": "sammlapp@gmail.com",
+    "root": "/Users/SML161/bioacoustics-cookbook",
+    "host": "DSAS-R2GHWXK40D",
+    "username": "SML161",
+    "executable": "/Users/SML161/miniconda3/envs/opso_dev/bin/python",
+    "cpu_count": 10,
+    "cpu_count_logical": 10,
+    "disk": {
+        "total": 926.3517189025879,
+        "used": 14.354557037353516
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 32.0
+    }
+}

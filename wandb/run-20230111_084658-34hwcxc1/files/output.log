@@ -1,0 +1,5 @@
+Using cache found in /Users/SML161/.cache/torch/hub/NVIDIA_DeepLearningExamples_torchhub
+/Users/SML161/.cache/torch/hub/NVIDIA_DeepLearningExamples_torchhub/PyTorch/Classification/ConvNets/image_classification/models/common.py:13: UserWarning: pytorch_quantization module not found, quantization will not be available
+  warnings.warn(
+/Users/SML161/.cache/torch/hub/NVIDIA_DeepLearningExamples_torchhub/PyTorch/Classification/ConvNets/image_classification/models/efficientnet.py:17: UserWarning: pytorch_quantization module not found, quantization will not be available
+  warnings.warn(

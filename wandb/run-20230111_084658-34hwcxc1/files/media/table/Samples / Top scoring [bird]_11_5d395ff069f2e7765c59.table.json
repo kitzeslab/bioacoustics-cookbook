@@ -1,0 +1,1 @@
+{"columns": ["audio", "tensor", "labels", "path", "clip start time", "clip end time", "bird"], "data": [["Audio", "Image", null, "./resources/birds_10s.wav", 5.0, 6.0, 0.26069432497024536], ["Audio", "Image", null, "./resources/birds_10s.wav", 2.0, 3.0, 0.20357263088226318], ["Audio", "Image", null, "./resources/birds_10s.wav", 7.0, 8.0, 0.15675637125968933]]}

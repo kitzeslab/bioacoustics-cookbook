@@ -1,0 +1,21 @@
+2023-01-11 09:48:24,778 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Configure stats pid to 37278
+2023-01-11 09:48:24,778 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Loading settings from /Users/SML161/.config/wandb/settings
+2023-01-11 09:48:24,778 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Loading settings from /Users/SML161/bioacoustics-cookbook/wandb/settings
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_init.py:_log_setup():476] Logging user logs to /Users/SML161/bioacoustics-cookbook/wandb/run-20230111_094824-1fqxrchx/logs/debug.log
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_init.py:_log_setup():477] Logging internal logs to /Users/SML161/bioacoustics-cookbook/wandb/run-20230111_094824-1fqxrchx/logs/debug-internal.log
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_init.py:init():516] calling init triggers
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {'comment': 'Description: extra comment from training notebook'}
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_init.py:init():569] starting backend
+2023-01-11 09:48:24,779 INFO    MainThread:37278 [wandb_init.py:init():573] setting up manager
+2023-01-11 09:48:24,791 INFO    MainThread:37278 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2023-01-11 09:48:24,793 INFO    MainThread:37278 [wandb_init.py:init():580] backend started and connected
+2023-01-11 09:48:24,798 INFO    MainThread:37278 [wandb_run.py:_label_probe_notebook():1116] probe notebook
+2023-01-11 09:48:24,798 INFO    MainThread:37278 [wandb_run.py:_label_probe_notebook():1126] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-01-11 09:48:24,798 INFO    MainThread:37278 [wandb_init.py:init():658] updated telemetry
+2023-01-11 09:48:24,837 INFO    MainThread:37278 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2023-01-11 09:49:25,163 ERROR   MainThread:37278 [wandb_init.py:init():704] backend process timed out
+2023-01-11 09:49:25,165 ERROR   MainThread:37278 [wandb_init.py:init():713] encountered error: Error communicating with wandb process
+For more info see: https://docs.wandb.ai/library/init#init-start-error

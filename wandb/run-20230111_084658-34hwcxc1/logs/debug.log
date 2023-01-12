@@ -1,0 +1,47 @@
+2023-01-11 08:46:58,485 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Configure stats pid to 37278
+2023-01-11 08:46:58,485 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Loading settings from /Users/SML161/.config/wandb/settings
+2023-01-11 08:46:58,485 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Loading settings from /Users/SML161/bioacoustics-cookbook/wandb/settings
+2023-01-11 08:46:58,485 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Loading settings from environment variables: {'_require_service': 'True'}
+2023-01-11 08:46:58,485 INFO    MainThread:37278 [wandb_setup.py:_flush():68] Inferring run settings from compute environment: {'program': '<python with no main file>'}
+2023-01-11 08:46:58,486 INFO    MainThread:37278 [wandb_init.py:_log_setup():476] Logging user logs to /Users/SML161/bioacoustics-cookbook/wandb/run-20230111_084658-34hwcxc1/logs/debug.log
+2023-01-11 08:46:58,486 INFO    MainThread:37278 [wandb_init.py:_log_setup():477] Logging internal logs to /Users/SML161/bioacoustics-cookbook/wandb/run-20230111_084658-34hwcxc1/logs/debug-internal.log
+2023-01-11 08:46:58,486 INFO    MainThread:37278 [wandb_init.py:_jupyter_setup():426] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x12c001340>
+2023-01-11 08:46:58,487 INFO    MainThread:37278 [wandb_init.py:init():516] calling init triggers
+2023-01-11 08:46:58,488 INFO    MainThread:37278 [wandb_init.py:init():519] wandb.init called with sweep_config: {}
+config: {'comment': 'Description: extra comment from training notebook'}
+2023-01-11 08:46:58,488 INFO    MainThread:37278 [wandb_init.py:init():569] starting backend
+2023-01-11 08:46:58,488 INFO    MainThread:37278 [wandb_init.py:init():573] setting up manager
+2023-01-11 08:46:58,495 INFO    MainThread:37278 [backend.py:_multiprocessing_setup():102] multiprocessing start_methods=spawn,fork,forkserver, using: spawn
+2023-01-11 08:46:58,524 INFO    MainThread:37278 [wandb_init.py:init():580] backend started and connected
+2023-01-11 08:46:58,540 INFO    MainThread:37278 [wandb_run.py:_label_probe_notebook():1116] probe notebook
+2023-01-11 08:46:58,541 INFO    MainThread:37278 [wandb_run.py:_label_probe_notebook():1126] Unable to probe notebook: 'NoneType' object has no attribute 'get'
+2023-01-11 08:46:58,541 INFO    MainThread:37278 [wandb_init.py:init():658] updated telemetry
+2023-01-11 08:46:58,597 INFO    MainThread:37278 [wandb_init.py:init():693] communicating run to backend with 60 second timeout
+2023-01-11 08:46:59,008 INFO    MainThread:37278 [wandb_run.py:_on_init():2006] communicating current version
+2023-01-11 08:46:59,253 INFO    MainThread:37278 [wandb_run.py:_on_init():2010] got version response upgrade_message: "wandb version 0.13.8 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+
+2023-01-11 08:46:59,254 INFO    MainThread:37278 [wandb_init.py:init():728] starting run threads in backend
+2023-01-11 08:47:04,313 INFO    MainThread:37278 [wandb_run.py:_console_start():1986] atexit reg
+2023-01-11 08:47:04,313 INFO    MainThread:37278 [wandb_run.py:_redirect():1844] redirect: SettingsConsole.WRAP_RAW
+2023-01-11 08:47:04,313 INFO    MainThread:37278 [wandb_run.py:_redirect():1909] Wrapping output streams.
+2023-01-11 08:47:04,313 INFO    MainThread:37278 [wandb_run.py:_redirect():1931] Redirects installed.
+2023-01-11 08:47:04,314 INFO    MainThread:37278 [wandb_init.py:init():765] run started, returning control to user process
+2023-01-11 08:47:04,314 INFO    MainThread:37278 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-11 08:47:04,314 INFO    MainThread:37278 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-11 08:49:34,091 INFO    MainThread:37278 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-11 08:49:57,895 INFO    MainThread:37278 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-11 08:49:57,896 INFO    MainThread:37278 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-11 08:51:31,381 INFO    MainThread:37278 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-11 08:51:31,389 INFO    MainThread:37278 [wandb_init.py:_pause_backend():389] pausing backend
+2023-01-11 08:51:31,390 INFO    MainThread:37278 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-11 08:53:10,321 INFO    MainThread:37278 [wandb_init.py:_resume_backend():398] resuming backend
+2023-01-11 08:53:17,276 INFO    MainThread:37278 [wandb_run.py:_finish():1753] finishing run kitzeslab/trying wandb in opensoundscape/34hwcxc1
+2023-01-11 08:53:18,027 INFO    MainThread:37278 [jupyter.py:save_history():448] not saving jupyter history
+2023-01-11 08:53:18,027 INFO    MainThread:37278 [jupyter.py:save_ipynb():378] not saving jupyter notebook
+2023-01-11 08:53:18,027 INFO    MainThread:37278 [wandb_init.py:_jupyter_teardown():408] cleaning up jupyter logic
+2023-01-11 08:53:18,027 INFO    MainThread:37278 [wandb_run.py:_atexit_cleanup():1955] got exitcode: 0
+2023-01-11 08:53:18,028 INFO    MainThread:37278 [wandb_run.py:_restore():1938] restore
+2023-01-11 08:53:18,028 INFO    MainThread:37278 [wandb_run.py:_restore():1944] restore done
+2023-01-11 08:53:23,255 INFO    MainThread:37278 [wandb_run.py:_footer_history_summary_info():3408] rendering history
+2023-01-11 08:53:23,256 INFO    MainThread:37278 [wandb_run.py:_footer_history_summary_info():3440] rendering summary
+2023-01-11 08:53:23,270 INFO    MainThread:37278 [wandb_run.py:_footer_sync_info():3364] logging synced files
