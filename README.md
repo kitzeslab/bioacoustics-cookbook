@@ -6,7 +6,8 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 - use the VGGish pre-trained audio feature extractor with OpenSoundscape with `vggish.ipynb`
 
 ## Top-down listening
-- Review and annotate audio clips based on classifier scores and metadata - `top-down-listening.ipynb`
+- Review and annotate audio clips based on classifier scores and metadata with `top-down-listening.ipynb`
+- Utilize other features for extraction (clip extraction, recording minutes - might be moved out to another notebook) and analysis (detection, occupancy - coming soon)
 
 ## Data selection
 - calculate sunrise and sunset times at a set of coordinate locations across a range of dates with `sunset_sunrise_calculator.ipynb`
