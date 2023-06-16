@@ -15,3 +15,5 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 
 ## GIS
 - Convert between UTM and Lat/Lon coordinates, and create KML files from tables/csvs of waypoints, in `coordinates_and_kml.ipynb`
+
+- Create a grid of points as a KML file in `create_points_grid_kml.ipynb`
