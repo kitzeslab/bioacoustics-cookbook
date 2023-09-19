@@ -1,0 +1,5 @@
+.DS_Store
+cnn_project_with_config_yml/configs/.ipynb_checkpoints/
+cnn_project_with_config_yml/.ipynb_checkpoints/
+.ipynb_checkpoints/
+cnn_project_with_config_yml/__pycache__/
