@@ -3,17 +3,16 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 
 
 ## Machine Learning
+- set up a model training project that uses a config.yml file to set hyperparameters and other options by copying the `cnn_project_with_cnfig_yml/` subdirectory
 - use the VGGish pre-trained audio feature extractor with OpenSoundscape with `vggish.ipynb`
 
-## Top-down listening
-- Review and annotate audio clips based on classifier scores and metadata with `top-down-listening.ipynb`
-- Utilize other features for extraction (clip extraction, recording minutes - might be moved out to another notebook) and analysis (detection, occupancy - coming soon)
+## Classifier-guided listening
+- Review and annotate audio clips based on classifier scores and metadata with `classifier-guided_listening.ipynb`
 
 ## Data selection
 - calculate sunrise and sunset times at a set of coordinate locations across a range of dates with `sunset_sunrise_calculator.ipynb`
 - filter a set of AudioMoth files to include only specific date ranges and (start) time ranges with `filter_files_by_dates_and_times.ipynb`
 
 ## GIS
-- Convert between UTM and Lat/Lon coordinates, and create KML files from tables/csvs of waypoints, in `coordinates_and_kml.ipynb`
-
-- Create a grid of points as a KML file in `create_points_grid_kml.ipynb`
+- Convert between UTM and Lat/Lon coordinates, and create KML files from tables/csvs of waypoints, in `gis/coordinates_and_kml.ipynb`
+- Create a grid of points as a KML file in `gis/create_points_grid_kml.ipynb`
