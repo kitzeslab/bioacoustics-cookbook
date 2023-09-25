@@ -1,0 +1,125 @@
+# Boilerplate training and inference (prediction) settings and hyperparameters for OpenSoundscape CNN class
+# load_cfg.py parses this yaml file and applies settings to the CNN class during __init__()
+# examples of train() and predict() using the config are given in the included notebooks
+# commented out lines are not implemented yet by the parser
+# to pass `None`, leave blank rather than writing None (eg: `random_seed: #no random seed`)
+
+# CNN initialization parameters:
+architecture: 'resnet18' #string, eg 'resnet18'. For all options use opensoundscape.ml.cnn_architectures.list_architectures()
+class_list: ['A','B','C','D','E'] #list of classes or path to text file listing classes
+sample_duration: 3 #in seconds
+single_target: False 
+sample_shape: [224,224,1] #height, width, channels of samples passed to CNN
+device: # (str or list) torch name of hardware device(s) to run network on. eg 'cuda:0', 'mps', 'cpu', ['cuda:0','cuda:1']: if blank, chooses GPU ('cuda:0' or 'mps') if available, otherwise 'cpu'. If list of devices, uses torch.nn.DataParallel to parallelize training across multiple GPUs. 
+prediction_threshold: 0.5
+
+# network initialization
+random_seed:  # (int, optional) random seed for reproducibility; if set, also sets torch.use_deterministic_algorithms(True)
+weights_path:  # (str, optional) path to model weights checkpoint file to load
+# note: weights_path takes precedence over warm-start pre-trained weights
+# pretrained: True  # (bool | str) whether to use a pretrained model (bool) (ie warmstart)
+
+
+# Preprocessing Parameters -------------------------------------------------------------------------------------------------------
+spec:
+    window_samples: 512  # (int) window size in samples
+    window_length_sec:  # (float) window size in seconds (do not set both window_samples and window_len_sec)
+    overlap_fraction: 0.5  # (float) window overlap as fraction of window size 
+    overlap_samples:  # (int) window overlap in samples (do not set both overlap_frac and overlap_samples)
+    fft_size: # (int) fft size in samples, if None, fft_size = window_samples
+    window_type: hann # (str) window type, see scipy.signal.get_window for options
+bandpass_range: # [low,high] frequencies in Hz for spectrogram frequency limits; leave blank for no bandpass
+# mel_spec: False # (bool) whether to use mel or linear frequency scale
+# n_mels: 128  # (int) number of mel bins, ignored if mel_spec=False
+
+# Augmentations 
+# masking
+time_mask_max_n: 3
+time_mask_max_width: 0.2
+freq_mask_max_n: 3
+freq_mask_max_width: 0.2
+# random affine 
+translate_time: 0.3  # (float) image translation (+/- fraction)
+translate_freq: 0.1  # (float) image translation (+/- fraction)
+# random noise
+add_noise_std: 0.005  # (float) add gaussian noise to spectrogram (std dev)
+# overlay augmentation
+overlay_df: #file path to overlay dataframe; if None, no overlay is performed
+overlay_update_labels: False  # (bool) update labels for overlay samples
+overlay_class: # see overlay docs for options
+overlay_prob: 1.0 # (float) probability of overlay augmentation
+max_overlay_num: 1 # (int) maximum number of overlays per sample
+overlay_weight: 0.5 # (float 0-1 or range eg [0.2, 0.5]) weight of overlayed sample (higher = stronger overlay)
+
+
+# Training -------------------------------------------------------------------------------------------------------
+
+# General Train settings -------------------------------------------------------------------------------------------------------
+resample_loss: True # uses ResampleLoss class to weight loss function by class frequency; if single_target, this is ignored
+
+train:
+    epochs: 50  # (int) number of epochs to train for
+    batch_size: 256  # (int) number of samples per batch
+    num_workers: 8  # (int) number of worker threads for data loading 
+    save_path: '.' # (str) path for saving save model checkpoints and configs
+    save_interval: 1  # (bool) save train checkpoints every n epochs
+    log_interval: 25  # (int) print training status every n batches
+    validation_interval: 1 # evaluate on validation set after every n epochs
+    invalid_samples_log: './invalid_training_samples.log' #log file for names of samples that failed to preprocess
+    raise_errors: False # (bool) whether to raise preprocessing errors or continue training if errors are encountered
+
+# Not yet implemented: 
+# amp: True  # (bool) Automatic Mixed Precision (AMP) training, choices=[True, False], True runs AMP check
+# freeze: False  # (int | list, optional) freeze feature extractor, only allow weights of classifier to train
+# dropout: 0.0  # (float) use dropout regularization 
+
+# Train Logging 
+log_file: #file path for logging outputs during training (if None, no log is created)
+logging_level: 1 #0 for logging nothing to log file, 1,2,3 for increasing verbosity
+verbose: 1 #0 for printing nothing to console, 1,2,3 for increasing verbosity
+invalid_samples_log: "./invalid_training_samples.log" #file path for logging samples that fail to preprocess during training
+
+# WandB Train logging settings
+# Note: the first time you use wandb on a machine you need to wandb.login() and provide API key from wandb.ai/authorize
+wandb_init:
+    name:  # (str, optional) experiment name (if None, wandb creates a name)
+    project: #wandb project name (if None, no wandb session is created)
+    entity: #wandb entity (group) name (required to start wandb session)
+wandb_logging:
+    n_preview_samples: 8  # before train/predict, log n random train (with and without augmentation) and n val samples to a wandb table
+    top_samples_classes: # specify list of classes to see top samples from
+    n_top_samples: 3  # after prediction, log n top scoring samples per class
+    watch_freq: 10  # logs histograms of params & grads every n batches;
+    # `log_graph` logs the model architecture shape to wandb - seems to cause issues when attempting to
+    # continue training the model, so True is not recommended
+    log_graph: False
+
+# Training Hyperparameters
+optimizer_params:
+    lr: 0.01 # (float) initial learning rate (i.e. SGD=1E-2, Adam=1E-3)
+    momentum: 0.9 # (float) SGD momentum/Adam beta1
+    weight_decay: 0.0005  # (float) optimizer weight decay 5e-4
+lr_update_interval: 10 # (int) update lr every n epochs
+lr_cooling_factor: 0.7 # (int) multiply lr by this value every lr_update_interval epochs
+
+# Not yet implemented:
+#TODO implement warmup?
+# warmup_epochs: 3.0  # (float) warmup epochs (fractions ok) 
+# warmup_momentum: 0.8  # (float) warmup initial momentum
+# warmup_bias_lr: 0.1  # (float) warmup initial bias lr
+# optimizer: SGD  # (str) optimizer to use, choices=[SGD, Adam] #TODO parse SGD or Adam as optimizer
+
+# Inference -------------------------------------------------------------------------------------------------------
+# Note that the `samples` argument to CNN.predict() can be (a) a list of file paths or (b) a pd.DataFrame with multi-index
+# specifying the file, start time, and end_time of each audio clip (eg, same as train_df and val_df for CNN.train())
+predict:
+    batch_size: 256 # number of samples simulataneously preprocesses and passed to CNN (larger = faster & more memory)
+    num_workers: 8 # number of parallel cpu tasks for preprocessing (more=faster up to limit of your cpus or I/O)
+    activation_layer: # options=[blank (None), softmax, sigmoid, softmax_and_logit]; blank is None, returns unmodified logits
+    split_files_into_clips: True # (bool) predict on sequential clips from list of file paths; ignored if provided clip df rather than file paths
+    overlap_fraction: 0  # (float) overlap in sec for sliding-window inference; ignored if provided clip df rather than file paths
+    final_clip: # options: [blank (None): discard end of audio file, extend: extend w silence, remainder: use incomplete clip; full: re-use part of penultimate clip]
+    bypass_augmentations: True #if False, preprocessor's augmentations are applied
+    invalid_samples_log: #path to log a text file containing samples that caused preprocessing errors
+    raise_errors: False #if True, preprocessing errors are raised rather than caught
+    return_invalid_samples: False
