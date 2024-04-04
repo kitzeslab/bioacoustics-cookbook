@@ -6,6 +6,7 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 - set up a model training project that uses a config.yml file to set hyperparameters and other options by copying the `cnn_project_with_cnfig_yml/` subdirectory
 - use the VGGish pre-trained audio feature extractor with OpenSoundscape with `vggish.ipynb`
 - generate embeddings with an OpenSoundscape CNN object with `cnn_embed.ipynb`
+- train shallow classifiers on pre-generated embeddings with `shallow_classifier.ipynb`
 
 ## Classifier-guided listening
 - Review and annotate audio clips based on classifier scores and metadata with `classifier-guided_listening.ipynb`
