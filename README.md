@@ -12,9 +12,10 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 ## Classifier-guided listening
 - Review and annotate audio clips based on classifier scores and metadata with `classifier-guided_listening.ipynb`
 
-## Data selection
+## Data selection and review
 - calculate sunrise and sunset times at a set of coordinate locations across a range of dates with `sunset_sunrise_calculator.ipynb`
 - filter a set of AudioMoth files to include only specific date ranges and (start) time ranges with `filter_files_by_dates_and_times.ipynb`
+- review grids of spectrograms using `viwe_spec_grid.ipynb`
 
 ## GIS
 - Convert between UTM and Lat/Lon coordinates, and create KML files from tables/csvs of waypoints, in `gis/coordinates_and_kml.ipynb`
