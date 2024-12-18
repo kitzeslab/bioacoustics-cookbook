@@ -44,7 +44,7 @@ At the first run, `tdl_colab.ipynb` will create a copy of `_scores.csv` named `_
 4. Share the link to the modified notebook with the listener.
 
 
-Annotation options:
+`annotate` function options:
 
  - `audio_dir (str)`: Directory containing audio clips to be annotated.
 
@@ -54,11 +54,13 @@ Annotation options:
 
  - `annotation_column`: Annotation column name. Defaults to 'annotation'.
 
- - `dates_filter`: List dates to be annotated (skip others). Defaults to empty list, [].
+ - `dates_filter`: List dates to be annotated (skip others). Defaults to an empty list, [].
 
- - `card_filter`: List cards to be annotated (skip others). Defaults to empty list, [].
+ - `card_filter`: List cards to be annotated (skip others). Defaults to an empty list, [].
 
- - `skip_cols`: Column names for skipping clips if a positive clip already flagged. 
+ - `skip_cols`: Column names for skipping clips if [n_positives] clips already found.
+ 
+ - `n_positives`: Number of positive clips per [skip_cols] needed before skipping others.
 
  - `n_sample`: Sample from valid rows. Defaults to None.
 
