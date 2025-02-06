@@ -9,6 +9,9 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 - train shallow classifiers on pre-generated embeddings using sklearn with `shallow_classifier.ipynb`
 - copy weights from an sklearn MLPClassifier to a torch/opensoundscape model with `copy_shallow_classifier_sklearn_to_torch.ipynb`
 
+## Manipulating audio annotations and labels
+- example of loading Audacity-formatted .txt file labels `annotations/load_audacity_annotations.ipynb`
+
 ## Classifier-guided listening
 - Review and annotate audio clips based on classifier scores and metadata with `classifier-guided_listening.ipynb`
 
