@@ -9,6 +9,7 @@ This repository contains various "recipes" for bioacoustics workflows and proble
 - train shallow classifiers on pre-generated embeddings using sklearn with `shallow_classifier.ipynb`
 - copy weights from an sklearn MLPClassifier to a torch/opensoundscape model with `copy_shallow_classifier_sklearn_to_torch.ipynb`
 - sample script for running Perch (global bird classifier) on audio data, using the Bioacoustics Model Zoo for perch access `cnn_inference_scripts/perch_bmz_inference_with_sparse_saving.py`
+- sample script for evaluating HawkEars on an annotated dataset (Powdermill, Chronister et al 2020)
 
 ## Manipulating audio annotations and labels
 - example of loading Audacity-formatted .txt file labels `annotations/load_audacity_annotations.ipynb`
