@@ -21,6 +21,7 @@ from tqdm import tqdm
 from pathlib import Path
 import bioacoustics_model_zoo as bmz
 import datetime
+import numpy as np
 
 # Set directory for predictions to be saved to
 save_dir = "/path/to/output/dir/"
@@ -79,8 +80,8 @@ for folder in tqdm(audio_folders):
         num_workers=8,
         # wandb_session=wandb_session,
     )
-    scores[scores < lowest_score_to_keep] = 0
-    sparse_df = scores.astype(pd.SparseDtype("float64", fill_value=0))
+    scores[scores < lowest_score_to_keep] = np.nan
+    sparse_df = scores.astype(pd.SparseDtype("float", fill_value=np.nan))
     sparse_df.to_pickle(save_path)
 
     # Note: Load this pickled sparse df from file using:
